@@ -52,4 +52,9 @@ public class UserController {
     public UserDto deleteUser(@PathVariable long id) {
         return userService.deleteById(id);
     }
+
+    @GetMapping("/place-order/{id}")
+    public boolean canUserPlaceOrder(@PathVariable long id) {
+        return userService.canUserPlaceOrder(id);
+    }
 }

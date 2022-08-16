@@ -29,4 +29,6 @@ public interface UserService {
     void unblockUser(long id);
 
     void giveAdminRootToUser(long id);
+
+    boolean canUserPlaceOrder(long id);
 }

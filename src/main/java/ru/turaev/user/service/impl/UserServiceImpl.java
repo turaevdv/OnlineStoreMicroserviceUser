@@ -136,4 +136,9 @@ public class UserServiceImpl implements UserService {
         user.setRole(Role.ADMIN);
         log.info("The user with id = {} has received admin root", id);
     }
+
+    @Override
+    public boolean canUserPlaceOrder(long id) {
+        return findUserById(id).isNonLocked();
+    }
 }
