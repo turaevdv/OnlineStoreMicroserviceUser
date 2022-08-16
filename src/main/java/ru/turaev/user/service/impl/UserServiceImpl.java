@@ -139,6 +139,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean canUserPlaceOrder(long id) {
-        return findUserById(id).isNonLocked();
+        try {
+            return findUserById(id).isNonLocked();
+        } catch (UserNotFoundException e) {
+            return false;
+        }
     }
 }
